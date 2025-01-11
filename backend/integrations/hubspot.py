@@ -13,7 +13,7 @@ from datetime import datetime
 from integrations.integration_item import IntegrationItem
 from redis_client import add_key_value_redis, get_value_redis, delete_key_redis
 
-CLIENT_ID = '57113d4b-613a-4f92-bed3-ea095e389e9a'
+CLIENT_ID = '57113d4b-613a-4f92-bed3-ea095e389e9a'   # This is not safe so it is recommended to save the credentials in the env file or local config file which should not be pushed. 
 CLIENT_SECRET = '88916c4c-5ec1-4cd1-856b-2efa59a56aa7'
 REDIRECT_URI = 'http://localhost:8000/integrations/hubspot/oauth2callback'
 TOKEN_ENDPOINT = "https://api.hubapi.com/oauth/v1/token"

@@ -145,6 +145,8 @@ async def get_items_notion(credentials) -> list[IntegrationItem]:
             'Notion-Version': '2022-06-28',
         },
     )
+    print(response)
+
 
     if response.status_code == 200:
         results = response.json()['results']

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     Box,
     Autocomplete,
@@ -7,10 +7,12 @@ import {
 import { AirtableIntegration } from './integrations/airtable';
 import { NotionIntegration } from './integrations/notion';
 import { DataForm } from './data-form';
+import { HubspotIntegration } from './integrations/hubspot';
 
 const integrationMapping = {
     'Notion': NotionIntegration,
     'Airtable': AirtableIntegration,
+    'Hubspot' : HubspotIntegration
 };
 
 export const IntegrationForm = () => {
@@ -19,6 +21,10 @@ export const IntegrationForm = () => {
     const [org, setOrg] = useState('TestOrg');
     const [currType, setCurrType] = useState(null);
     const CurrIntegration = integrationMapping[currType];
+
+    useEffect(()=>{
+        console.log(integrationParams)
+    },[integrationParams])
 
   return (
     <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column' sx={{ width: '100%' }}>

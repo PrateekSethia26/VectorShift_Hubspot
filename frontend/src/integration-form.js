@@ -22,9 +22,9 @@ export const IntegrationForm = () => {
     const [currType, setCurrType] = useState(null);
     const CurrIntegration = integrationMapping[currType];
 
-    useEffect(()=>{
-        console.log(integrationParams)
-    },[integrationParams])
+    // useEffect(()=>{
+    //     console.log(integrationParams)
+    // },[integrationParams])
 
   return (
     <Box display='flex' justifyContent='center' alignItems='center' flexDirection='column' sx={{ width: '100%' }}>

@@ -60,7 +60,7 @@ async def oauth2callback_hubspot(request: Request):
         raise HTTPException(status_code=400, detail='State does not match.')
     
     response = await tokenGeneration(code,user_id, org_id)
-    print(response)
+    print(response)  # checking for token
 
     await add_key_value_redis(f'hubspot_credentials:{org_id}:{user_id}', json.dumps(response), expire=600)
 
